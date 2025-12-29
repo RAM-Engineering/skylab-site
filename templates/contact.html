@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact · Carolina SkyLab</title>
+
+  <style>
+  :root {
+    --hero-bg: url('{{ request.url_for("images", path="applybg.png") }}');
+  }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ request.url_for('assets', path='css/main.css') }}">
+</head>
+
+<body>
+
+  <!-- === NAVBAR === -->
+  <header>
+    <div class="brand">
+      <img src="{{ request.url_for('images', path='logo.png') }}" alt="Carolina Skylab">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/apply" class="cta">Join Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- === HERO SECTION === -->
+  <section class="apply-hero">
+    <div class="apply-hero-inner">
+      <h1>Contact Us</h1>
+      <p>Get in touch with Carolina Skylab</p>
+    </div>
+  </section>
+
+  <!-- === CONTACT INFO === -->
+  <section class="apply-info">
+    <div class="apply-container">
+      <div class="apply-text">
+        <h2>Contact Information</h2>
+        <p>
+          <a href="mailto:arshn@unc.edu">arshn@unc.edu</a> · Head of Carolina Skylab<br>
+          <a href="mailto:blake_seigler@unc.edu">blake_seigler@unc.edu</a> · President of Ram Engineering
+        </p>
+        <p>
+          Subsidiary of Ram Engineering: <a href="https://ram-engineering.org" target="_blank">ram-engineering.org</a>
+        </p>
+        <p>
+          Carolina Skylab · University of North Carolina at Chapel Hill
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- === FOOTER === -->
+  <footer id="contact">
+    <img src="{{ request.url_for('images', path='logo.png') }}" alt="Carolina Skylab" />
+    <!-- <p>
+      Contact: <a href="mailto:arshn@unc.edu">arshn@unc.edu</a> · Head of Carolina Skylab<br>
+      <a href="mailto:blake_seigler@unc.edu">blake_seigler@unc.edu</a> · President of Ram Engineering
+    </p> -->
+    <p>Carolina Skylab · University of North Carolina at Chapel Hill</p>
+  </footer>
+
+</body>
+</html>
+

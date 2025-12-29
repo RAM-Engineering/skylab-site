@@ -32,6 +32,10 @@ def main_page(request: Request):
 def apply_page(request: Request):
     return templates.TemplateResponse("apply.html", {"request": request})
 
+@app.get("/contact", response_class=HTMLResponse)
+def contact_page(request: Request):
+    return templates.TemplateResponse("contact.html", {"request": request})
+
 
 # For local development with uvicorn
 if __name__ == "__main__":
