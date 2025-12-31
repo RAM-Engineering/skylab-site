@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Carolina SkyLab</title>
+
+  <style>
+    :root{
+      --projects-bg: url('{{ request.url_for("images", path="droneF25.png") }}');
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ request.url_for('assets', path='css/main.css') }}">
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <img src="{{ request.url_for('images', path='logo.png') }}" alt="Carolina SkyLab">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/apply" class="cta">Join Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="projects-hero" id="top">
+    <div class="projects-hero-inner">
+      <h1>Projects</h1>
+      <p>
+        Past builds, current work, and what is next.
+      </p>
+
+      <div class="projects-hero-actions">
+        <a class="btn-outline" href="#fall2025">Fall 2025</a>
+        <a class="btn-solid" href="#spring2026">Spring 2026</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="projects-main">
+    <section class="semester" id="fall2025">
+      <div class="semester-head">
+        <h2>Fall 2025</h2>
+        <div class="semester-meta">
+          <span class="pill">Completed</span>
+          <span class="pill subtle">2 projects</span>
+        </div>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <h3>FPV Drone</h3>
+            <span class="status done">Completed</span>
+          </div>
+          <p class="project-desc">
+            A team of 7 engineers designed, soldered and assembled a custom LiPo powered FPV drone on a carbon-fibre frame.
+          </p>
+          <div class="project-tags">
+            <span>Soldering</span><span>Mechanical assembly</span><span>Electronics</span>
+          </div>
+          <div class="project-foot">
+            <span class="muted">Fall 2025</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>LiPo Cardboard Bi-plane</h3>
+            <span class="status done">Completed</span>
+          </div>
+          <p class="project-desc">
+            A custom-designed, flight capable plane with control surfaces and an airframe built entirely from cardboard.
+          </p>
+          <div class="project-tags">
+            <span>Laser cutting</span><span>Electronics</span><span>CAD</span>
+          </div>
+          <div class="project-foot">
+            <span class="muted">Fall 2025</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="semester" id="spring2026">
+      <div class="semester-head">
+        <h2>Spring 2026</h2>
+        <div class="semester-meta">
+          <span class="pill upcoming">Upcoming</span>
+          <span class="pill subtle">3 projects</span>
+        </div>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Project A Title</h3>
+            <span class="status upcoming">Upcoming</span>
+          </div>
+          <p class="project-desc">
+            What you plan to build, the core technical challenge, and how members will contribute.
+          </p>
+          <div class="project-tags">
+            <span>Design</span><span>Build</span><span>Validation</span>
+          </div>
+          <div class="project-foot">
+            <a class="link" href="/apply">Join to participate</a>
+            <span class="muted">Spring 2026</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Project B Title</h3>
+            <span class="status upcoming">Upcoming</span>
+          </div>
+          <p class="project-desc">
+            Short summary of the goal and the expected demo by the end of semester.
+          </p>
+          <div class="project-tags">
+            <span>Perception</span><span>Autonomy</span><span>Systems</span>
+          </div>
+          <div class="project-foot">
+            <a class="link" href="/apply">Join to participate</a>
+            <span class="muted">Spring 2026</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Project C Title</h3>
+            <span class="status upcoming">Upcoming</span>
+          </div>
+          <p class="project-desc">
+            Short summary of scope, constraints, and what success looks like.
+          </p>
+          <div class="project-tags">
+            <span>Propulsion</span><span>Structures</span><span>Testing</span>
+          </div>
+          <div class="project-foot">
+            <a class="link" href="/apply">Join to participate</a>
+            <span class="muted">Spring 2026</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+  <img src="{{ request.url_for('images', path='logo.png') }}" alt="Carolina Skylab" />
+
+  <p>Carolina Skylab · University of North Carolina at Chapel Hill</p>
+</footer>
+</body>
+</html>
