@@ -1,164 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Carolina SkyLab</title>
+{% extends "base.html" %}
+{% block title %}Projects · Carolina Skylab{% endblock %}
+{% block description %}Projects from Carolina Skylab, including current and past semester builds.{% endblock %}
+{% block head %}
+  <link rel="preload" as="image" href="/images/workshop.png">
+{% endblock %}
 
-  <style>
-    :root{
-      --projects-bg: url('{{ request.url_for("images", path="droneF25.png") }}');
-    }
-  </style>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ request.url_for('assets', path='css/main.css') }}">
-</head>
-
-<body>
-  <header>
-    <div class="brand">
-      <img src="{{ request.url_for('images', path='logo.png') }}" alt="Carolina SkyLab">
+{% block content %}
+<section class="shot">
+  <div class="shot-media">
+    <img
+      src="/images/projects.png"
+      alt="Carolina Skylab workshop"
+      width="1800"
+      height="910"
+      fetchpriority="high"
+    >
+  </div>
+  <div class="shot-copy fade-on-load">
+    <p class="shot-label">Student builds</p>
+    <h1 class="hero-title">Projects</h1>
+    <p>Aircraft, drones, and propulsion designed, assembled, and tested on campus. Each semester is a new flight of work.</p><br><p>In-depth project spotlights coming soon.</p>
+    <div class="actions">
+      <a class="btn btn-ghost" href="#fall2026">Fall 2026 →</a>
+      <a class="btn btn-ghost" href="#spring2026">Spring 2026 →</a>
     </div>
+  </div>
+</section>
 
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/apply" class="cta">Join Us</a></li>
-      </ul>
-    </nav>
-  </header>
+<section class="shot split" id="fall2026">
+  <div class="shot-media">
+    <img
+      src="/images/plane_circuit.png"
+      alt="Electronics inside a Carolina Skylab airframe"
+      width="1200"
+      height="1600"
+      loading="lazy"
+      decoding="async"
+    >
+  </div>
+  <div class="shot-copy reveal">
+    <p class="shot-label">Fall 2026 · Planned</p>
+    <h2>What's Next</h2>
+    <p>Three builds for the incoming cohort. Teams form through R.A.M. Engineering.</p>
+    <a class="btn btn-ghost" href="{{ apply_url }}" target="_blank" rel="noopener noreferrer">Join a Team →</a>
+  </div>
+  <div class="shot-copy copy-right reveal">
+    <article class="project-item">
+      <p class="shot-label">Planned</p>
+      <h3>Project A</h3>
+      <p>Details forthcoming.</p>
+    </article>
+    <article class="project-item">
+      <p class="shot-label">Planned</p>
+      <h3>Project B</h3>
+      <p>Details forthcoming.</p>
+    </article>
+    <article class="project-item">
+      <p class="shot-label">Planned</p>
+      <h3>Project C</h3>
+      <p>Details forthcoming.</p>
+    </article>
+  </div>
+</section>
 
-  <section class="projects-hero" id="top">
-    <div class="projects-hero-inner">
-      <h1>Projects</h1>
-      <p>
-        Past builds, current work, and what is next.
-      </p>
+<section class="shot" id="spring2026">
+  <div class="shot-media">
+    <img
+      src="/images/ncc1.png"
+      alt="Carolina Skylab drone"
+      width="1200"
+      height="1600"
+      loading="lazy"
+      decoding="async"
+    >
+  </div>
+  <div class="shot-copy reveal">
+    <p class="shot-label">Spring 2026</p>
+    <h2>VTOL Drone</h2>
+    <p>Equipped with a custom gimbal engine and closed feedback-loop software, this project is V1 of our thrust-vector VTOL drone.</p>
+    <p>Embedded systems · VTOL design · CAD</p>
+  </div>
+</section>
 
-      <div class="projects-hero-actions">
-        <a class="btn-outline" href="#fall2025">Fall 2025</a>
-        <a class="btn-solid" href="#spring2026">Spring 2026</a>
-      </div>
-    </div>
-  </section>
+<section class="shot">
+  <div class="shot-media">
+    <img
+      src="/images/cat45.png"
+      alt="Carolina Skylab aircraft on the bench"
+      width="1200"
+      height="1600"
+      loading="lazy"
+      decoding="async"
+    >
+  </div>
+  <div class="shot-copy copy-right reveal">
+    <p class="shot-label">Spring 2026</p>
+    <h2>Solid-propellant Rocket Engine | CAT-45</h2>
+    <p>Developing Carolina’s first solid-fuel rocket engine through in-house propellant formulation and a custom welded engine casing.</p>
+    <p>Fuel mixing · Steel welding · Engine design</p>
+  </div>
+</section>
 
-  <main class="projects-main">
-    <section class="semester" id="fall2025">
-      <div class="semester-head">
-        <h2>Fall 2025: Engineering our foundation</h2>
-        <div class="semester-meta">
-          <span class="pill">Completed</span>
-          <span class="pill subtle">2 projects</span>
-        </div>
-      </div>
+<section class="shot">
+  <div class="shot-media">
+    <img
+      src="/images/ows.png"
+      alt="Carolina Skylab at work"
+      width="1800"
+      height="910"
+      loading="lazy"
+      decoding="async"
+    >
+  </div>
+  <div class="shot-copy reveal">
+    <p class="shot-label">Spring 2026</p>
+    <h2>Flight Controller | OWS-32</h2>
+    <p>A custom flight controller developed alongside Carolina Chip Fab, spanning chip design and firmware for real-time aerial control.</p>
+    <p>Chip fabrication · Embedded systems · Solder</p>
+  </div>
+</section>
 
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-top">
-            <h3>FPV Drone</h3>
-            <span class="status done">Completed</span>
-          </div>
-          <p class="project-desc">
-            A team of 7 engineers designed, soldered and assembled a custom LiPo powered FPV drone on a carbon-fibre frame.
-          </p>
-          <div class="project-tags">
-            <span>Soldering</span><span>Mechanical assembly</span><span>Electronics</span>
-          </div>
-          <div class="project-foot">
-            <span class="muted">Fall 2025</span>
-          </div>
-        </article>
+<section class="shot" id="fall2025">
+  <div class="shot-media">
+    <img
+      src="/images/droneF25.png"
+      alt="Custom FPV drone on a carbon-fibre frame"
+      width="1200"
+      height="1600"
+      loading="lazy"
+      decoding="async"
+    >
+  </div>
+  <div class="shot-copy copy-right reveal">
+    <p class="shot-label">Fall 2025</p>
+    <h2>FPV Drone</h2>
+    <p>A team of seven engineers designed, soldered, and assembled a custom LiPo-powered FPV drone on a carbon-fibre frame.</p>
+    <p>Soldering · Mechanical assembly · Electronics</p>
+  </div>
+</section>
 
-        <article class="project-card">
-          <div class="project-top">
-            <h3>LiPo Biplane</h3>
-            <span class="status done">Completed</span>
-          </div>
-          <p class="project-desc">
-            A custom-designed, flight capable plane with control surfaces and an airframe built entirely from cardboard.
-          </p>
-          <div class="project-tags">
-            <span>Laser cutting</span><span>Electronics</span><span>CAD</span>
-          </div>
-          <div class="project-foot">
-            <span class="muted">Fall 2025</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="semester" id="spring2026">
-      <div class="semester-head">
-        <h2>Spring 2026: Stretching the meaning of possible</h2>
-        <div class="semester-meta">
-          <span class="pill upcoming">Upcoming</span>
-          <span class="pill subtle">3 projects</span>
-        </div>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-top">
-            <h3>VTOL Drone</h3>
-            <span class="status upcoming">Upcoming</span>
-          </div>
-          <p class="project-desc">
-            Equipped with a custom gimbal engine and closed feedback-loop software and with real-life applications, this project aims to be V1 of our thrust-vector VTOL drone.
-          </p>
-          <div class="project-tags">
-            <span>Embedded systems</span><span>VTOL design</span><span>CAD</span>
-          </div>
-          <div class="project-foot">
-            <a class="link" href="/apply">Join to participate</a>
-            <span class="muted">Spring 2026</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <h3>Solid rocket engine</h3>
-            <span class="status upcoming">Upcoming</span>
-          </div>
-          <p class="project-desc">
-            Developing Carolina’s first solid-fuel rocket engine through in-house chemical formulation of solid propellant and fabrication of a custom welded engine casing.
-          </p>
-          <div class="project-tags">
-            <span>Fuel mixing</span><span>Steel welding</span><span>Engine design</span>
-          </div>
-          <div class="project-foot">
-            <a class="link" href="/apply">Join to participate</a>
-            <span class="muted">Spring 2026</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-top">
-            <h3>Flight controller</h3>
-            <span class="status upcoming">Upcoming</span>
-          </div>
-          <p class="project-desc">
-            A custom flight controller developed alongside Carolina Chip Fab, encompassing chip design & firmware development for reliable real-time aerial vehicle control.
-          </p>
-          <div class="project-tags">
-            <span>Chip fabrication</span><span>Embedded systems</span><span>Solder</span>
-          </div>
-          <div class="project-foot">
-            <a class="link" href="/apply">Join to participate</a>
-            <span class="muted">Spring 2026</span>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-  <img src="{{ request.url_for('images', path='logo.png') }}" alt="Carolina Skylab" />
-
-  <p>Carolina Skylab · University of North Carolina at Chapel Hill</p>
-</footer>
-</body>
-</html>
+<section class="shot">
+  <div class="shot-media">
+    <img
+      src="/images/plane_beam.png"
+      alt="Carolina Skylab LiPo biplane"
+      width="1200"
+      height="1600"
+      loading="lazy"
+      decoding="async"
+    >
+  </div>
+  <div class="shot-copy reveal">
+    <p class="shot-label">Fall 2025</p>
+    <h2>LiPo plane</h2>
+    <p>A custom-designed, flight-capable plane with control surfaces and a custom-designed airframe.</p>
+    <p>Laser cutting · Electronics · CAD</p>
+    <a class="btn btn-ghost" href="/#apply">Join Us →</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% block description %}Carolina Skylab is UNC Chapel Hill’s aerospace engineering organization.{% endblock %}">
+  <title>{% block title %}Carolina Skylab{% endblock %}</title>
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css?v=17">
+  {% block head %}{% endblock %}
+</head>
+<body class="page-{{ active }}">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/images/logo.png" alt="Carolina Skylab" width="480" height="468">
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">Menu</label>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/" {% if active == "home" %}aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="/projects" {% if active == "projects" %}aria-current="page"{% endif %}>Projects</a></li>
+        <li class="nav-mobile-only"><a href="/#apply">Join</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-ghost header-cta" href="/#apply">Join Us</a>
+  </header>
+
+  <noscript>
+    <style>.shot-copy.reveal, .fade-on-load, .hero-title { opacity: 1; animation: none; }</style>
+  </noscript>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <script>
+    (function () {
+      var copies = document.querySelectorAll(".shot-copy.reveal");
+      if (!copies.length) return;
+      if (!("IntersectionObserver" in window)) {
+        copies.forEach(function (el) { el.classList.add("is-in"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+          } else {
+            entry.target.classList.remove("is-in");
+          }
+        });
+      }, { threshold: 0.28, rootMargin: "0px 0px -8% 0px" });
+      copies.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>

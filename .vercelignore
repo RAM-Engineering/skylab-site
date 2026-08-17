@@ -1,0 +1,15 @@
+# Unused HTML5 UP leftovers — not referenced by the site
+static/assets/js
+static/assets/sass
+static/assets/webfonts
+
+# Original camera PNGs (15MB–3MB). Pages use the WebP versions instead.
+static/images/bg.png
+static/images/applybg.png
+static/images/dronebg.png
+static/images/droneF25.png
+static/images/videoposter.png
+
+.DS_Store
+**/.DS_Store
+.idea
